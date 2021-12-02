@@ -7,7 +7,7 @@ public class MyStack implements Stackable {
 
     public MyStack(int n) {
         this.size = n;
-        arr = new int[size];
+        this.arr = new int[size];
         this.top = -1;
     }
 
@@ -22,8 +22,10 @@ public class MyStack implements Stackable {
     public int deleteElement() {
         if (top == -1) {
             System.out.println("You cant delete element. Stack is empty");
+            return -999999;
+        } else {
+            return arr[top--];
         }
-        return arr[top--];
     }
 
     public int showTopElement() {
